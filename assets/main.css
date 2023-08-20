@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.menu-button {
+  @apply text-gray-300 hover:bg-[#8C68CE] hover:text-white rounded-md px-3 py-2 text-sm font-medium;
+}
+
+.form-input {
+  @apply block w-full rounded-md border-0 py-1.5 px-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
+}
+
+.btn-primary {
+  @apply inline-flex disabled:bg-[#c7b5e7] w-full justify-center rounded-md bg-[#6f42c1] px-3 py-2 text-sm font-semibold text-[white] shadow-sm hover:bg-[#8c68ce]  sm:w-auto;
+}
+
+.alert-primary {
+  @apply border-2 text-[#432776] rounded border-[#59339d] bg-[white];
+}
+
+.btn-danger {
+  @apply inline-flex disabled:bg-[#f1aaaa] w-full justify-center rounded-md bg-[#dc2626] px-3 py-2 text-sm font-semibold text-[white] shadow-sm hover:bg-[#e35252]  sm:w-auto;
+}
+
+.alert-danger {
+  @apply border-2 text-[#861616] rounded border-[#b21d1d] bg-[white];
+}
+
+.btn-secondary {
+  @apply inline-flex disabled:bg-[white] w-full justify-center rounded-md bg-[#c9c9c9] px-3 py-2 text-sm font-semibold text-[white] shadow-sm hover:bg-[#e3e3e3]  sm:w-auto;
+}
+
+.alert-secondary {
+  @apply border-2 text-[#969696] rounded border-[#b0b0b0] bg-[white];
+}
+
+.btn-success {
+  @apply inline-flex disabled:bg-[#67eb98] w-full justify-center rounded-md bg-[#16a34a] px-3 py-2 text-sm font-semibold text-[white] shadow-sm hover:bg-[#1cd05e]  sm:w-auto;
+}
+
+.alert-success {
+  @apply border-2 text-[#0a4921] rounded border-[#107636] bg-[#c1f7d5];
+}
+
+.v-enter-active {
+  transition: opacity 0.2s ease;
+}
+
+.v-leave-active {
+  transition: opacity 0s;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.collapse-enter-active {
+  transition: scale 0.2s ease;
+}
+
+.collapse-leave-active {
+  transition: scale 0s;
+}
+
+.collapse-enter-from,
+.collapse-leave-to {
+  scale: 0;
+}
+
+/*# sourceMappingURL=main.css.map */

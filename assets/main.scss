@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$colors: (
+        "primary": (bg:#6f42c1, text: #FFFFFFFF),
+        "danger": (bg:#dc2626, text: #FFFFFFFF),
+        "secondary": (bg:#c9c9c9, text: #FFFFFFFF),
+        "success": (bg: #16a34a, text: #FFFFFFFF),
+);
+
+.menu-button {
+    @apply text-gray-300 hover:bg-[#8C68CE] hover:text-white rounded-md px-3 py-2 text-sm font-medium
+}
+.form-input {
+    @apply block w-full rounded-md border-0 py-1.5 px-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6
+}
+
+@each $name, $theme in $colors {
+    $color: map-get($theme, 'bg');
+    $textColor: map-get($theme, "text");
+    $lightenColor: lighten($color, 10% );
+    $disableColor: lighten($color, 30% );
+
+
+    .btn-#{$name} {
+        @apply inline-flex disabled:bg-[#{"" + $disableColor}] w-full justify-center rounded-md bg-[#{$color}] px-3 py-2 text-sm font-semibold text-[#{"" + $textColor}] shadow-sm hover:bg-[#{"" + $lightenColor}]  sm:w-auto
+
+    }
+
+    .alert-#{$name} {
+        @apply border-2 text-[#{"" + darken($color, 20%)}] rounded border-[#{"" + darken($color, 10%)}] bg-[#{"" + lighten($color, 50%)}]
+    }
+}
+
+
+
+.v-enter-active {
+    transition: opacity 0.2s ease;
+}
+.v-leave-active {
+    transition: opacity 0s;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
+
+
+.collapse-enter-active {
+    transition: scale 0.2s ease;
+}
+.collapse-leave-active {
+    transition: scale 0s;
+}
+
+.collapse-enter-from,
+.collapse-leave-to {
+    scale: 0;
+}
