@@ -1,24 +1,27 @@
+@import url("https://fonts.cdnfonts.com/css/helvetica-neue-55");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.menu-button {
-  @apply text-gray-300 hover:bg-[#8C68CE] hover:text-white rounded-md px-3 py-2 text-sm font-medium;
+@layer base {
+  html {
+    font-family: Helvetica Neue Light, sans-serif;
+    font-weight: 400;
+  }
 }
-
 .form-input {
   @apply block w-full rounded-md border-0 py-1.5 px-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
 }
 
 .btn-primary {
-  @apply inline-flex disabled:bg-[#c7b5e7] w-full justify-center rounded-md bg-[#6f42c1] px-3 py-2 text-sm font-semibold text-[white] shadow-sm hover:bg-[#8c68ce]  sm:w-auto;
+  @apply inline-flex disabled:bg-[#a38cc6] w-full justify-center rounded-md bg-[#563d7c] px-3 py-2 text-sm font-semibold text-[#fafafa] shadow-sm hover:bg-[#6e4e9e] hover:shadow-md hover:shadow-[#28a745] sm:w-auto transition-all;
 }
 
 .alert-primary {
-  @apply border-2 text-[#432776] rounded border-[#59339d] bg-[white];
+  @apply border-2 text-[#271b38] rounded border-[#3e2c5a] bg-[#dad0e8];
 }
 
 .btn-danger {
-  @apply inline-flex disabled:bg-[#f1aaaa] w-full justify-center rounded-md bg-[#dc2626] px-3 py-2 text-sm font-semibold text-[white] shadow-sm hover:bg-[#e35252]  sm:w-auto;
+  @apply inline-flex disabled:bg-[#f1aaaa] w-full justify-center rounded-md bg-[#dc2626] px-3 py-2 text-sm font-semibold text-[#fafafa] shadow-sm hover:bg-[#e35252] hover:shadow-md hover:shadow-[#28a745] sm:w-auto transition-all;
 }
 
 .alert-danger {
@@ -26,7 +29,7 @@
 }
 
 .btn-secondary {
-  @apply inline-flex disabled:bg-[white] w-full justify-center rounded-md bg-[#c9c9c9] px-3 py-2 text-sm font-semibold text-[white] shadow-sm hover:bg-[#e3e3e3]  sm:w-auto;
+  @apply inline-flex disabled:bg-[white] w-full justify-center rounded-md bg-[#c9c9c9] px-3 py-2 text-sm font-semibold text-[#fafafa] shadow-sm hover:bg-[#e3e3e3] hover:shadow-md hover:shadow-[#28a745] sm:w-auto transition-all;
 }
 
 .alert-secondary {
@@ -34,11 +37,11 @@
 }
 
 .btn-success {
-  @apply inline-flex disabled:bg-[#67eb98] w-full justify-center rounded-md bg-[#16a34a] px-3 py-2 text-sm font-semibold text-[white] shadow-sm hover:bg-[#1cd05e]  sm:w-auto;
+  @apply inline-flex disabled:bg-[#86e29b] w-full justify-center rounded-md bg-[#28a745] px-3 py-2 text-sm font-semibold text-[#fafafa] shadow-sm hover:bg-[#34ce57] hover:shadow-md hover:shadow-[#28a745] sm:w-auto transition-all;
 }
 
 .alert-success {
-  @apply border-2 text-[#0a4921] rounded border-[#107636] bg-[#c1f7d5];
+  @apply border-2 text-[#145523] rounded border-[#1e7e34] bg-[#d8f6df];
 }
 
 .v-enter-active {
