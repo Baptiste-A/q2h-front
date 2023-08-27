@@ -2,7 +2,7 @@
 import * as yup from 'yup';
 import {useForm} from "vee-validate";
 const sexes = ['Homme', 'Femme']
-
+import {AsyncData} from "#app";
 const schema = yup.object({
     identifiant: yup.string().required("Un identifiant est requis"),
     password: yup.string().required("Mot de passe requis"),
@@ -11,8 +11,11 @@ const schema = yup.object({
     prenom: yup.string().required("Prénom est requis"),
     sexe: yup.string().required("Prénom est requis").oneOf(sexes),
     licence: yup.string().required("Licence requise").matches(/\d+/, {message: "Ne peut contenir que des chiffres"}),
+    club: yup.object().required("Club requis"),
     date_naissance: yup.date().required("Date de naissance requise"),
   })
+let r = useApi('/clubs')
+const clubs = r.data
 const {values,meta,  defineInputBinds, handleSubmit, errors} = useForm({validationSchema : schema})
 const identifiant = defineInputBinds('identifiant');
 const password = defineInputBinds('password');
@@ -20,6 +23,7 @@ const passwordConfirmation = defineInputBinds('passwordConfirmation');
 const nom = defineInputBinds('nom');
 const prenom = defineInputBinds('prenom');
 const sexe = defineInputBinds('sexe')
+const club = defineInputBinds('club')
 const licence = defineInputBinds('licence')
 const date_naissance = defineInputBinds("date_naissance")
 
@@ -29,17 +33,21 @@ const registrationOk = ref(false)
 const tryRegistration = ref(false)
 
 const submit = handleSubmit(async values =>{
-  const r  = await useApi('/register', { method: 'POST',
+  const {data}  = await useApi('/register', { method: 'POST',
     body: {
       identifiant: values.identifiant,
       password: values.password, nom: values.nom,
       prenom: values.prenom,
       sexe: values.sexe,
       licence: values.licence,
+      clubId: values.club.id,
       date_naissance: values.date_naissance,
   }})
-  if (r.status.value === "success"){
+  if (data.value.error === undefined){
     registrationOk.value = true
+  }else {
+    registrationOk.value = false
+    registrationMessage.value = data.value.error
   }
   tryRegistration.value = true
 
@@ -97,6 +105,7 @@ const submit = handleSubmit(async values =>{
 
     <InputsQSelect name="sexe" label="Sexe" :items="sexes" class="mb-2"/>
 
+
     <div class="mb-2">
       <label >Numéro de licence</label>
       <input type="text" v-bind="licence" class="form-input ">
@@ -104,6 +113,9 @@ const submit = handleSubmit(async values =>{
         <div class="text-red-600" v-if="errors.licence!= undefined">{{errors.licence}}</div>
       </Transition>
     </div>
+
+    <InputsQSelect name="club" label="Club" value-displayed="nom" :items="clubs"  class="mb-2"/>
+
     <div class="mb-2">
       <label >Date de naissance</label>
       <input type="date" v-bind="date_naissance" class="form-input ">

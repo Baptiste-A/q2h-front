@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const route = useRoute()
+
 </script>
 
 <template>
   <div class="h-full">
 
-    <div class="w-full px-4 h-full flex flex-col justify-between">
+    <div class="w-full px-4 h-full ">
       <div class="border rounded p-2">
         <h2 class="text-2xl">Présentation</h2>
         <p>
