@@ -4,7 +4,6 @@
 
       <slot />
 
-
    <Footer v-if="$route.name !== 'index'"/>
   </div>
 </template>
