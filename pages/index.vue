@@ -7,7 +7,7 @@ const route = useRoute()
 
     <!-- bandeau violet -->
     <div class="p-2 text-center w-full bg-primary">
-      <h1 class="text-8xl mt-3 text-light" id="titre">Quilles2Huit<span class="text-black">.fr</span></h1>
+      <h1 class="sm:text-8xl text-4xl mt-3 text-light" id="titre">Quilles2Huit<span class="text-black">.fr</span></h1>
       <div class="mx-auto lead text-xl text-light" id="center">
         Le futur des quilles de huit. Dès à présent.
 
@@ -16,11 +16,11 @@ const route = useRoute()
     </div>
 
     <!-- blocs de présentation -->
-    <div class="my-12 mx-20">
+    <div class="lg:my-12 lg:mx-20 m-4">
 
       <!-- bloc 1 -->
-      <div class="border rounded flex mb-4">
-        <div class="flex w-[20%]">
+      <div class="border rounded lg:flex mb-4">
+        <div class="lg:w-[20%] lg:h-[20%] shrink-0">
           <img src="favicon.ico" class="rounded w-full">
         </div>
         <div class="p-4">
@@ -39,8 +39,8 @@ const route = useRoute()
       </div>
 
       <!-- bloc 2 -->
-      <div class="border rounded flex mb-4">
-        <div class="flex w-[20%]">
+      <div class="border rounded lg:flex mb-4">
+        <div class="lg:w-[20%] lg:h-[20%] shrink-0">
           <img src="presCarton.png" class="rounded w-full">
         </div>
         <div class="p-4">
@@ -76,8 +76,8 @@ const route = useRoute()
       </div>
 
       <!-- bloc 3 -->
-      <div class="border rounded flex mb-4">
-        <div class="flex w-[20%]">
+      <div class="border rounded lg:flex mb-4">
+        <div class="lg:w-[20%] lg:h-[20%] shrink-0">
           <img src="presProfil.png" class="rounded w-full">
         </div>
         <div class="p-4">
