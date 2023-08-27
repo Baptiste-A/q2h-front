@@ -1,17 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+@layer base {
+    html {
+        font-family: Helvetica Neue Light, sans-serif;
+        font-weight: 400;
+    }
+}
 
 $colors: (
-        "primary": (bg:#6f42c1, text: #FFFFFFFF),
-        "danger": (bg:#dc2626, text: #FFFFFFFF),
-        "secondary": (bg:#c9c9c9, text: #FFFFFFFF),
-        "success": (bg: #16a34a, text: #FFFFFFFF),
+        "primary": (bg:#563d7c, text: #fafafa),
+        "danger": (bg:#dc2626, text: #fafafa),
+        "secondary": (bg:#c9c9c9, text: #fafafa),
+        "success": (bg: #28a745, text: #fafafa),
 );
 
-.menu-button {
-    @apply text-gray-300 hover:bg-[#8C68CE] hover:text-white rounded-md px-3 py-2 text-sm font-medium
-}
 .form-input {
     @apply block w-full rounded-md border-0 py-1.5 px-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6
 }
@@ -24,7 +29,7 @@ $colors: (
 
 
     .btn-#{$name} {
-        @apply inline-flex disabled:bg-[#{"" + $disableColor}] w-full justify-center rounded-md bg-[#{$color}] px-3 py-2 text-sm font-semibold text-[#{"" + $textColor}] shadow-sm hover:bg-[#{"" + $lightenColor}]  sm:w-auto
+        @apply inline-flex disabled:bg-[#{"" + $disableColor}] w-full justify-center rounded-md bg-[#{$color}] px-3 py-2 text-sm font-semibold text-[#{"" + $textColor}] shadow-sm hover:bg-[#{"" + $lightenColor}] hover:shadow-md hover:shadow-[#28a745] sm:w-auto transition-all
 
     }
 
